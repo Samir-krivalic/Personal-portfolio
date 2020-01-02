@@ -1,0 +1,180 @@
+// Wide screens
+@include mediaXL {}
+// Desktops and laptops
+@include mediaLg {}
+// Tablets and smal devices
+@include mediaMd {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 3rem;
+    }
+
+    h1#pro {
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  div.menu-branding,
+  ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 27px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+
+    .portrait {
+      background: url("../img/profile.jpg");
+      width: 250px;
+      height: 250px;
+      background-size: cover;
+      transform: scale(0.8);
+    }
+  }
+
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'exp' 'icons';
+    grid-template-columns: 1fr;
+
+    .ic {
+      margin: 0 20px;
+    }
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overlay-image {
+    line-height: 1;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  div.image-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 6vh;
+  }
+
+  #scroll {
+    text-align: center;
+    padding: 0;
+  }
+}
+// Smartphones
+@include mediaSm {
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  #checking {
+    font-size: 1.2rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 400;
+
+    &.lg-heading {
+      font-size: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2em 1rem;
+      background: rgba(lighten($primary-color, 2), 0.4);
+    }
+
+    &.sm-heading2 {
+      margin-bottom: 3rem;
+      padding: 0.2em 1rem;
+      background: rgba(lighten($primary-color, 2), 0.2);
+      text-align: center;
+      color: $secondary-color;
+      font-size: 1.8rem;
+      border-radius: 20%;
+      margin-top: 2rem;
+    }
+
+    &.second-i {
+      margin-bottom: 3rem;
+      padding: 0.2em 1rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  main#home h1 {
+    margin-top: 10vh;
+    align-items: center;
+    text-align: center;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  div.image-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 6vh;
+  }
+
+  .box {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 4rem;
+
+    div {
+      font-size: 1.3rem;
+      border: 3px $secondary-color solid;
+      padding: 1rem 2rem;
+      @include easeOut;
+      border-radius: 10%;
+
+      &:hover {
+        padding: 0.5rem 1.5rem;
+        background: $secondary-color;
+        color: #fff;
+
+        span {
+          font-size: 1.9rem;
+          color: set-text-color($secondary-color);
+        }
+      }
+    }
+  }
+}
